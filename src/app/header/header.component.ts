@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from "@angular/core";
+import { Component } from "@angular/core";
 
 @Component({
     selector: 'app-header',
@@ -7,13 +7,11 @@ import { Component, Output, EventEmitter } from "@angular/core";
         .navbar-nav {
             margin-right: 80px;
         }
+
+        .active-tab {
+            background-color: #595b63 !important;
+        }
     `]
 })
 export class HeaderComponent {
-    @Output() featureSelected: EventEmitter<string> = new EventEmitter();
-
-    onSelect(feat: string) {
-        this.featureSelected.emit(feat);
-    }
-
 }
