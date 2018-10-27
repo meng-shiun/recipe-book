@@ -32,7 +32,11 @@
             class="btn btn-success mr-2" 
             type="submit"
             [disabled]="!shoppingForm.valid"> {{ editMode ? 'Update' : 'Add' }} </button>
-          <button class="btn btn-danger mr-2" type="button">Delete</button>
+          <button 
+            class="btn btn-danger mr-2" 
+            type="button" 
+            (click)="onDelete()"
+            *ngIf="editMode">Delete</button>
           <button class="btn btn-primary" type="button" (click)="onClear()">Clear</button>
         </div>
       </div>
