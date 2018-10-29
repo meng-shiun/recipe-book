@@ -17,20 +17,14 @@ export class RecipeDetailComponent implements OnInit {
               private route: ActivatedRoute,
               private router: Router) { }
 
-  ngOnInit() {    
-    // *Subscribe without Resolver
-    // this.route.paramMap
-    //   .subscribe(
-    //     params => {
-    //       this.id = +params.get('id');
-    //       this.recipe = this.recipeService.getRecipe(this.id);
-    //     }
-    //   );
-
-    // *Subscribe with Resolver
-    this.route.data.subscribe(
-      data => this.recipe = data.recipeDetail
-    )
+  ngOnInit() {
+    this.route.paramMap
+      .subscribe(
+        params => {
+          this.id = +params.get('id');
+          this.recipe = this.recipeService.getRecipe(this.id);
+        }
+      );
   }
 
   onEditRecipe() {
