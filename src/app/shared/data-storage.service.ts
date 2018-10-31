@@ -14,4 +14,12 @@ export class DataStorageService {
 
         return this.http.put(url, this.recipeService.getRecipes());
     }
+
+    getRecipes() {
+        const url = 'https://recipe-book-ms.firebaseio.com/recipes.json';
+
+        this.http.get(url).subscribe(
+            recipes => this.recipeService.setRecipes(recipes)
+        );
+    }
 }
