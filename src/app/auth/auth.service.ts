@@ -24,4 +24,8 @@ export class AuthService {
             })
             .catch(err => console.log(err));
     }
+
+    isAuthenticated() {
+        return this.token != null;
+    }
 }
