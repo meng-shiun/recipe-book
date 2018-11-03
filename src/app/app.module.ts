@@ -27,9 +27,9 @@ import { RecipesModule } from './recipes/recipes.module';
   imports: [
     BrowserModule,
     FormsModule,
+    HttpClientModule,
     RecipesModule,
-    AppRoutingModule,
-    HttpClientModule
+    AppRoutingModule
   ],
   providers: [AuthGuard],
   bootstrap: [AppComponent]
