@@ -34,4 +34,6 @@ export class HeaderComponent {
     onLogout() {
         this.authService.logout();
     }
+
+    isAuthenticated = () => this.authService.isAuthenticated();
 }
